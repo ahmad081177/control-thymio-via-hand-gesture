@@ -2,7 +2,7 @@
 ### YOLO! Detect my hand gesture to control my Thymio robot.
 
 ## Abstract
-This proof of concept combining a wireless Thymio II with a python software on computer to control the movements of the robot. Python software based on YOLOV5 is running on the computer to detect hand gestures via a camera. Once the python application recognizes new hand gesture, the python script decides what command to send to the Thymio robot. For exmaple, hand gesture of one means "move forward", hand gesture of "five" means "stop", hand gesture of "fist" means "speed up", and so on.
+This proof of concept is combining a wireless Thymio II with a python software on computer to control the movements of the robot via hand gestures. Python software based on YOLOV5 is running on the computer to detect hand gestures via a camera. Once the python application recognizes new hand gesture, the python script decides what command to send to the Thymio robot. For exmaple, hand gesture of one means "move forward", hand gesture of "five" means "stop", hand gesture of "fist" means "speed up", and so on. For all commands, refer to __cmd_map memeber in thymio.py file in this repository.
 
 ## Setup
 * Install python v3 from https://www.python.org/downloads/
@@ -65,4 +65,4 @@ This proof of concept combining a wireless Thymio II with a python software on c
 ### For more details, refer to the [documentation](Control%20Thymio%20Robot%20via%20Hand%20Gestures.docx)
 
 ## DEMO
-[Control Thymio by Hand Gesture](https://youtube.com/shorts/no3g03PY0nw "Control Thymio by Hand Gesture"){:target="_blank" rel="noopener"}
+[Control Thymio by Hand Gesture](https://youtube.com/shorts/no3g03PY0nw "Control Thymio by Hand Gesture")
