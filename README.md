@@ -58,7 +58,10 @@ This proof of concept combining a wireless Thymio II with a python software on c
         ```
 
 ### Run the software:
-  * In your shell, type: (thymio) c:\work\thymio\src\yolov5-control-thymio>run_detect.bat
+  * In your shell, type: ```(thymio) c:\work\thymio\src\yolov5-control-thymio>run_detect.bat```
+  * test ``test``
+  ** dd
+  ##### iii
   
 ### For more details, refer to the [documentation](Control%20Thymio%20Robot%20via%20Hand%20Gestures.docx)
 
