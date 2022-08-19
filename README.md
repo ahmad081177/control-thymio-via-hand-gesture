@@ -7,8 +7,8 @@ This proof of concept combining a wireless Thymio II with a python software on c
 ## Setup
 * Install python v3 from https://www.python.org/downloads/
 * Install the Thymio Suite from https://www.thymio.org/download-thymio-suite/
-*### Prepare new python environment:
-  * In your command shell, run: python -m venv c:\work\thymio
+* Prepare new python environment:
+  * In your command shell, run: ```python -m venv c:\work\thymio```
   * Activate the environment by typing in the command shell: c:\work\thymio\Scripts\Activate.bat
   * Download YOLOV5 of Ultralytics from GitHub - https://github.com/ultralytics/yolov5
   * Copy the Ultralytics folder to: c:\work\thymio\src\yolov5-control-thymio\yolov5
@@ -58,7 +58,7 @@ This proof of concept combining a wireless Thymio II with a python software on c
 
         ```
 
-*### Run the software:
+### Run the software:
   * In your shell, type: (thymio) c:\work\thymio\src\yolov5-control-thymio>run_detect.bat
   
 ### For more details, refer to the [documentation](Control%20Thymio%20Robot%20via%20Hand%20Gestures.docx)
