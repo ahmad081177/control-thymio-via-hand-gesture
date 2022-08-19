@@ -3,11 +3,11 @@ REM See https://wandb.ai/onlineinference/YOLO/reports/YOLOv5-Object-Detection-on
 
 set MAIN_FOLDER=c:\work
 
-set ENV_DIR=%MAIN_FOLDER%\thymio-yolov5-env
+set ENV_DIR=%MAIN_FOLDER%\thymio
 python -m venv %ENV_DIR%
 call %ENV_DIR%\Scripts\Activate.bat
 
-set PROJ_DIR=%MAIN_FOLDER%\thymio-yolov5
+set PROJ_DIR=%MAIN_FOLDER%\src
 mkdir %PROJ_DIR%
 cd %PROJ_DIR%
 REM Clone the yolov5 of ultralytics locally to yolov5 folder
