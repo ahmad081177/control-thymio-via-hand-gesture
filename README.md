@@ -65,4 +65,4 @@ This proof of concept combining a wireless Thymio II with a python software on c
 ### For more details, refer to the [documentation](Control%20Thymio%20Robot%20via%20Hand%20Gestures.docx)
 
 ## DEMO
-[![Control Thymio by Hand Gesture]](https://youtube.com/shorts/no3g03PY0nw "Control Thymio by Hand Gesture")
+[Control Thymio by Hand Gesture](https://youtube.com/shorts/no3g03PY0nw "Control Thymio by Hand Gesture")
