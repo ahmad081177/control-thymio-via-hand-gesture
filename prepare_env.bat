@@ -18,7 +18,7 @@ call pip install -r requirements.txt
 REM Download Control Thymio via Hand Gesture
 cd %WORKSPACE%
 call git clone https://github.com/ahmad081177/control-thymio-via-hand-gesture %WORKSPACE%\control-thymio-via-hand-gesture
-move /Y %WORKSPACE%\control-thymio-via-hand-gesture\* %WORKSPACE%\yolov5\.
+xcopy /E /Y /C %WORKSPACE%\control-thymio-via-hand-gesture\* %WORKSPACE%\yolov5\.
 
 REM Download Yolov5 models
 cd %WORKSPACE%\yolov5

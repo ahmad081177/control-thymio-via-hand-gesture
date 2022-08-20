@@ -24,7 +24,8 @@ This proof of concept is combining a wireless Thymio II with a python software o
     * Download this repository to yolov5 folder, i.e., c:\workdir\thymio\yolov5
   * Or:
     * From your shell, type: ```(thymio) c:\workdir\thymio>git clone https://github.com/ahmad081177/control-thymio-via-hand-gesture .```
-    * Then move files into yolov5 folder by typing: ```(thymio) c:\workdir\thymio>move /Y control-thymio-via-hand-gesture\* yolov5\ ```
+    * Then copy/move files into yolov5 folder by typing: ```(thymio) c:\workdir\thymio>xcopy /E /Y /C control-thymio-via-hand-gesture\* yolov5\. ```
+  * Download Thymio requirements by typing: (thymio) c:\workdir\thymio\yolov5>pip install -r thymio_req.txt```
   * From your shell run: ```(thymio) c:\workdir\thymio\yolov5>python download_models.py```
 * Prepare environment to detect hand gesture:
   * Locate detect.py in yolov5 subfolder and modify it as following:

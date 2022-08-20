@@ -1,0 +1,4 @@
+# Thymio requirements
+# Usage: pip install -r thymio_req.txt
+
+tdmclient>=0.1.18
