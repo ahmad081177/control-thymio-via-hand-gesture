@@ -64,8 +64,8 @@ This proof of concept is combining a wireless Thymio II with a python software o
     ```
 
 ### Run the software:
-  * Make sure you camera is connected
-  * Make sure the Thymio robot is tunred on and the wireless dongle is pluged in the computer
+  * Make sure your camera is connected
+  * Make sure the Thymio robot is turned on and the wireless dongle is plugged in the computer
   * In your shell, type: ```(thymio) c:\workdir\thymio\yolov5>run_detect.bat```
   
 ### For more details, refer to the [documentation](Control%20Thymio%20Robot%20via%20Hand%20Gestures.docx)
