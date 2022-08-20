@@ -7,46 +7,51 @@ This proof of concept is combining a wireless Thymio II with a python software o
 ## Setup
 * Install python v3 from https://www.python.org/downloads/
 * Install the Thymio Suite from https://www.thymio.org/download-thymio-suite/
-* Prepare new python environment:
-  * In your command shell, run: ```C:\> mkdir c:\work\thymio```
-  * In your command shell, run: ```C:\> python -m venv c:\work\thymio```
-  * Activate the environment by typing in the command shell: ```c:\work\thymio\Scripts\Activate.bat```
-  * Download YOLOV5 of Ultralytics from GitHub - https://github.com/ultralytics/yolov5
-  * Copy the Ultralytics folder to: c:\work\thymio\yolov5-control-thymio\yolov5
-  * In your command shell, from yolov5 folder type: ```(thymio) c:\work\thymio\yolov5-control-thymio\yolov5> pip install -r requirements.txt```
-  * Either download this repository to your local disk, say, c:\work\thymio\yolov5-control-thymio
-  * Or: in your shell type: ```(thymio) c:\work\thymio\yolov5-control-thymio> git clone https://github.com/ahmad081177/control-thymio-via-hand-gesture .```
-  * Copy (or move) download_models.py from c:\work\thymio\yolov5-control-thymio into yolov5 subfolder
-  * From your shell run: ```(thymio) c:\work\thymio\yolov5-control-thymio\yolov5> python download_models.py```
-  * In case you want to train the model on your end, run the: ```(thymio) c:\work\thymio\yolov5-control-thymio> run_train.bat```
-  * Prepare for detect:
-    * copy thymio.py into yolov5 subfolder
-    * Locate detect.py in yolov5 subfolder and modify it as following:
-      * Add the following lines at the beginning - before anything else.
-        ```
-        import os, sys
-        #https://github.com/opencv/opencv/issues/17687
-        os.environ["OPENCV_VIDEOIO_MSMF_ENABLE_HW_TRANSFORMS"] = "0"
-        ```
-      * After all imports of the file, add the following code:
-        ```
-        from thymio import Thymio
-        ```
-      * Locate run method, after "Load model" and before "Dataloader" place the following code:
-        ```
-        _thymio = None
-        print('start creating new Thymio interface')
-        _thymio = Thymio()
-        r = _thymio.start()
-        if r==True:
-            print('Thymio interface has been started successfully')
-        else:
-            _thymio=None
-            print('Thymio interface could not be started')
-
-        ```
-      * Locate "Print results" comment, and inside the loop, new the code should be:
-        ```
+* You may run prepare_env.bat under this repository to prepare the environment, Or follow below steps.
+* Prepare new python environment - Step by step:
+  * From your command shell, run: ```C:\> mkdir c:\workdir\thymio```
+  * From your command shell, run: ```C:\> python -m venv c:\workdir\thymio```
+  * Activate the environment by typing in the command shell: ```c:\workdir\thymio\Scripts\Activate.bat```
+* Download and Setup YOLOV5:
+  * Either:
+    * Download YOLOV5 of Ultralytics from GitHub - https://github.com/ultralytics/yolov5
+    * Copy the Ultralytics folder's content to: c:\workdir\thymio\yolov5
+  * Or:
+    * Run the following command from the shell: ```(thymio) c:\workdir\thymio>git clone https://github.com/ultralytics/yolov5 yolov5 ```
+  * From your command shell, from yolov5 sub-folder type: ```(thymio) c:\workdir\thymio\yolov5>pip install -r requirements.txt```
+* Download and Setup Control Thymio via Hand Gesture:
+  * Either:
+    * Download this repository to yolov5 folder, i.e., c:\workdir\thymio\yolov5
+  * Or:
+    * From your shell, type: ```(thymio) c:\workdir\thymio>git clone https://github.com/ahmad081177/control-thymio-via-hand-gesture .```
+    * Then move files into yolov5 folder by typing: ```(thymio) c:\workdir\thymio>move /Y control-thymio-via-hand-gesture\* yolov5\ ```
+  * From your shell run: ```(thymio) c:\workdir\thymio\yolov5>python download_models.py```
+* Prepare environment to detect hand gesture:
+  * Locate detect.py in yolov5 subfolder and modify it as following:
+    * Add the following lines at the beginning - before anything else.
+      ```
+      import os, sys
+      #https://github.com/opencv/opencv/issues/17687
+      os.environ["OPENCV_VIDEOIO_MSMF_ENABLE_HW_TRANSFORMS"] = "0"
+      ```
+    * After all imports, add the following code:
+      ```
+      from thymio import Thymio
+      ```
+    * Locate run method, after "Load model" and before "Dataloader" place the following code:
+    ```
+    _thymio = None
+    print('start creating new Thymio interface')
+    _thymio = Thymio()
+    r = _thymio.start()
+    if r==True:
+        print('Thymio interface has been started successfully')
+    else:
+        _thymio=None
+        print('Thymio interface could not be started')
+    ```
+    * Locate "Print results" comment, and inside the loop, new the code should be:
+    ```
         for c in det[:, -1].unique():
             #Start Modify - Ahmad
             if _thymio is not None: 
@@ -55,13 +60,12 @@ This proof of concept is combining a wireless Thymio II with a python software o
             #End Modify - Ahmad
             n = (det[:, -1] == c).sum()  # detections per class
             s += f"{n} {names[int(c)]}{'s' * (n > 1)}, "  # add to string
-
-        ```
+    ```
 
 ### Run the software:
   * Make sure you camera is connected
-  * Make sure the Thymio robot is tunred on and the wireless dongle is pluged in to the computer
-  * In your shell, type: ```(thymio) c:\work\thymio\yolov5-control-thymio>run_detect.bat```
+  * Make sure the Thymio robot is tunred on and the wireless dongle is pluged in the computer
+  * In your shell, type: ```(thymio) c:\workdir\thymio\yolov5>run_detect.bat```
   
 ### For more details, refer to the [documentation](Control%20Thymio%20Robot%20via%20Hand%20Gestures.docx)
 
