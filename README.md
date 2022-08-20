@@ -68,7 +68,7 @@ This proof of concept is combining a wireless Thymio II with a python software o
   * Make sure the Thymio robot is turned on and the wireless dongle is plugged in the computer
   * In your shell, type: ```(thymio) c:\workdir\thymio\yolov5>run_detect.bat```
   
-### For more details, refer to the [documentation](Control%20Thymio%20Robot%20via%20Hand%20Gestures.docx)
+### For more details, refer to the [documentation](Control%20Thymio%20Robot%20thru%20Hand%20Gestures.docx)
 
 ## DEMO
 [Control Thymio by Hand Gesture](https://youtube.com/shorts/no3g03PY0nw "Control Thymio by Hand Gesture")
