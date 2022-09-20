@@ -4,10 +4,10 @@ mkdir %WORKSPACE%
 cd %WORKSPACE%
 
 REM Create Python Env
-python -m venv %WORKSPACE%
-cd %WORKSPACE%
-REM Activate the Thymio environment
-call %WORKSPACE%\Scripts\Activate.bat
+REM Uncomment below 3 lines in case you want to work with Python env.
+REM python -m venv %WORKSPACE%
+REM cd %WORKSPACE%
+REM call %WORKSPACE%\Scripts\Activate.bat
 
 REM Download Yolov5
 call git clone https://github.com/ultralytics/yolov5 yolov5
@@ -22,7 +22,8 @@ xcopy /E /Y /C %WORKSPACE%\control-thymio-via-hand-gesture\* %WORKSPACE%\yolov5\
 
 REM Download Yolov5 models
 cd %WORKSPACE%\yolov5
+call pip install -r thymio_req.txt
 python download_models.py
 
-REM Follow steps under "Prepare environment to detect hand gesture" in README.md
-Call MSG %USERNAME% Follow steps under "Prepare environment to detect hand gesture" in README.md
+call MSG %USERNAME% Environment is ready. To run the software, double click: %WORKSPACE%\yolov5\run_detect.bat
+call explorer.exe /select,%WORKSPACE%\yolov5\run_detect.bat
